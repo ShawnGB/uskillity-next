@@ -1,3 +1,9 @@
+import LayoutContainer from '../../components/layouts/container';
+
 export default function About() {
-  return <div className='text-primary-500'>about</div>;
+  return (
+    <LayoutContainer>
+      <h1>about</h1>
+    </LayoutContainer>
+  );
 }

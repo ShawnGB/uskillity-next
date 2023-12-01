@@ -17,7 +17,6 @@ export default function RootLayout({
       <body className='bg-offWhite'>
         <Navbar />
         {children}
-        <footer> footer</footer>
       </body>
     </html>
   );

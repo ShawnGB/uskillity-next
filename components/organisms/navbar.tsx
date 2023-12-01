@@ -1,5 +1,6 @@
 'use client';
 
+import { useEffect, useState } from 'react';
 import ButtonAtom from '../atoms/ButtonAtom';
 import NavLinkAtom from '../atoms/NavLinkAtom';
 
@@ -12,8 +13,31 @@ export default function Navbar() {
     { href: 'about', text: 'baout' },
   ];
 
+  const navButtons: ButtonAtomProps[] = [
+    { text: 'Sign up', onButtonClick: () => console.log('clicked') },
+    { text: 'Log in', onButtonClick: () => console.log('clicked') },
+  ];
+
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 0);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
-    <nav className='w-full h-16 fixed flex justify-between '>
+    <nav
+      className={`sticky top-0 left-0 w-screen h-20 flex justify-between items-center z-50 backdrop-filter backdrop-blur-md bg-opacity-75 ${
+        isScrolled ? 'shadow' : ''
+      }`}
+    >
       <div className={containerStyle}>
         {navLinks.map((link, index) => (
           <NavLinkAtom href={link.href} text={link.text} key={index} />
@@ -21,14 +45,13 @@ export default function Navbar() {
       </div>
 
       <div className={containerStyle}>
-        <ButtonAtom
-          text='Sign up'
-          onButtonClick={() => console.log('clicked')}
-        />
-        <ButtonAtom
-          text='Log in'
-          onButtonClick={() => console.log('clicked')}
-        />
+        {navButtons.map((button, index) => (
+          <ButtonAtom
+            key={index}
+            text={button.text}
+            onButtonClick={button.onButtonClick}
+          />
+        ))}
       </div>
     </nav>
   );
