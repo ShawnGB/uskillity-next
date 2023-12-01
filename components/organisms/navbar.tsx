@@ -1,3 +1,5 @@
+'use client';
+
 import ButtonAtom from '../atoms/ButtonAtom';
 import NavLinkAtom from '../atoms/NavLinkAtom';
 
@@ -19,8 +21,14 @@ export default function Navbar() {
       </div>
 
       <div className={containerStyle}>
-        <ButtonAtom text='Sign up' />
-        <ButtonAtom text='Log in' />
+        <ButtonAtom
+          text='Sign up'
+          onButtonClick={() => console.log('clicked')}
+        />
+        <ButtonAtom
+          text='Log in'
+          onButtonClick={() => console.log('clicked')}
+        />
       </div>
     </nav>
   );
