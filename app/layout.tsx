@@ -16,7 +16,9 @@ export default function RootLayout({
     <html lang='en'>
       <body className='bg-offWhite'>
         <Navbar />
-        {children}
+        <div className='w-full h-full flex justify-center align-middle items-center'>
+          {children}
+        </div>
       </body>
     </html>
   );
