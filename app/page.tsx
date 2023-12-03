@@ -1,25 +1,23 @@
 import CardAtom from '../components/atoms/cardAtom';
 import Image from 'next/image';
+import hero from './(resources)/images/hero.jpg';
 
 export default function Home() {
   return (
     <CardAtom>
-      <div>
-        <h1 className=' text-2xl font-bold text-white'>
+      <div className='w-1/3 h-full mx-4 flex flex-col justify-center gap-8'>
+        <h1 className='text-6xl font-bold text-white text-secondary-50 text-bold'>
           Unlock Your Potential with u/skillity: Connect, Learn, Grow
         </h1>
-        <h2>
+        <h2 className='text-xl text-secondary-100'>
           Welcome to u/skillity, where knowledge meets community. Join us on a
           journey of skill-sharing, networking, and personal growth. Embrace the
           power of connection.
         </h2>
       </div>
-      <Image
-        src='/quino-al-xEy9QNUCdRI-unsplash.jpg' // Absolute path starting with /
-        alt='Description of the image'
-        width={500} // Set your desired width
-        height={300} // Set your desired height
-      />
+      <div className='rounded-lg w-2/3'>
+        <Image src={hero} alt='Description of the image' />
+      </div>
     </CardAtom>
   );
 }
