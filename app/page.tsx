@@ -7,7 +7,7 @@ export default function Home() {
     <CardAtom>
       <div className='w-1/3 h-full mx-4 flex flex-col justify-center gap-8'>
         <h1 className='text-6xl font-bold text-white text-secondary-50 text-bold'>
-          Unlock Your Potential with u/skillity: Connect, Learn, Grow
+          Unlock Your Potential & Connect, Learn, Grow
         </h1>
         <h2 className='text-xl text-secondary-100'>
           Welcome to u/skillity, where knowledge meets community. Join us on a
@@ -15,7 +15,7 @@ export default function Home() {
           power of connection.
         </h2>
       </div>
-      <div className='rounded-lg w-2/3'>
+      <div className='w-2/3'>
         <Image src={hero} alt='Description of the image' />
       </div>
     </CardAtom>
