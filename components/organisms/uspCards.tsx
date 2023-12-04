@@ -30,7 +30,7 @@ export default function UspCards() {
           <div className='p-4 flex flex-col items-center gap-4'>
             <h1 className='text-4xl'>{usp.symbol}</h1>
             <h3 className='text-xl font-bold'>{usp.title}</h3>
-            <p className='text-justify leading-normal w-2/3'>
+            <p className='text-justify leading-normal w-4/5'>
               {usp.decription}
             </p>
           </div>

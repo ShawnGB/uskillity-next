@@ -14,7 +14,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang='en'>
-      <body className='bg-offWhite'>
+      <body className='bg-primary-50'>
         <Navbar />
         <div className='w-full min-h-screen flex justify-center'>
           {children}
