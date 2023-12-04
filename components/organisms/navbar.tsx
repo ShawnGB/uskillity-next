@@ -3,6 +3,8 @@
 import { useEffect, useState } from 'react';
 import ButtonAtom from '../atoms/ButtonAtom';
 import NavLinkAtom from '../atoms/NavLinkAtom';
+import Logo from '../../app/(resources)/svg/logo.svg';
+import Image from 'next/image';
 
 export default function Navbar() {
   const containerStyle = 'h-full  mx-4 flex gap-4 items-center';
@@ -10,7 +12,7 @@ export default function Navbar() {
   const navLinks: NavLinkProps[] = [
     { href: '/', text: 'Home' },
     { href: '/workshops', text: 'Workshops' },
-    { href: 'about', text: 'baout' },
+    { href: 'about', text: 'About' },
   ];
 
   const navButtons: ButtonAtomProps[] = [
@@ -39,6 +41,9 @@ export default function Navbar() {
       }`}
     >
       <div className={containerStyle}>
+        <div className='h-1/2 flex justify-center align-mid'>
+          <Image src={Logo} alt='Description of the image' height={46} />
+        </div>
         {navLinks.map((link, index) => (
           <NavLinkAtom href={link.href} text={link.text} key={index} />
         ))}
