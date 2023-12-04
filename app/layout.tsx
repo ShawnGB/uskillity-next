@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import Navbar from '../components/organisms/navbar';
+import Footer from '../components/organisms/footer';
 
 export const metadata: Metadata = {
   title: 'u/skillity',
@@ -14,11 +15,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang='en'>
-      <body className='bg-primary-50'>
+      <body className='bg-offWhite'>
         <Navbar />
-        <div className='w-full min-h-screen flex justify-center'>
+        <div className='w-full min-h-screen flex justify-center mb-40'>
           {children}
         </div>
+        <Footer />
       </body>
     </html>
   );
