@@ -10,8 +10,8 @@ type ButtonAtomProps = {
 
 type InputFieldProps = {
   label: string;
-  register: UseFormRegisterReturn<string>;
-  error?: { message: string } | undefined;
+  register: UseFormRegisterReturn<string>; // You might want to adjust this based on your form's structure
+  error?: FieldError | undefined;
   placeholder: string;
   type: string;
 };
