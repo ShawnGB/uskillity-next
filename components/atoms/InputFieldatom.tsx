@@ -5,10 +5,11 @@ const InputField: React.FC<InputFieldProps> = ({
   placeholder,
   type,
 }) => (
-  <div>
+  <div className='w-full h-10 m-4'>
     <label>
-      <span>{label}</span>
+      <span className='w-full'>{label}</span>
       <input
+        className='w-full unset'
         {...register}
         aria-invalid={error ? 'true' : 'false'}
         placeholder={placeholder}

@@ -1,3 +1,4 @@
+'use client';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import SignUpFormMolecule from '../molecules/SignUpFormMolecule';
 
@@ -13,7 +14,7 @@ export default function SignUpForm() {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { errors, isSubmitting, isDirty, isValid },
   } = useForm<FormValues>();
 
   const formFields = [
@@ -86,13 +87,19 @@ export default function SignUpForm() {
 
   const onSubmit: SubmitHandler<FormValues> = async (data) => {
     console.log(data);
-    // Perform further actions, e.g., submit the form data to the server
   };
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <SignUpFormMolecule fields={formFields} />
-      <button type='submit'>Submit</button>
+
+      <button
+        className='h-11 px-4 border-2 rounded-md justify-self-end border-primary-200 text-primary-500 bg-offWhite bg-opacity-50'
+        type='submit'
+        disabled={!isDirty || !isValid || isSubmitting}
+      >
+        {isSubmitting ? 'Submitting...' : 'Submit'}
+      </button>
     </form>
   );
 }
